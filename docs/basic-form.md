@@ -35,3 +35,15 @@ This sets the `<main>` element is 80% of the view height of the DOM container.
 We'll save our work and do a commit. I tag all of my commits to help identify the type of work I'm doing. You'll see tags like NEW, ADD, REFACTOR, DEL, UPDATE, and FIX. These all give context to the actual work with the fewest words possible. It helps me keep track of what I'm doing. Use whatever system works for you!
 
 `git commit -m "ADD: app structure, basic style"`
+
+## Adding a Login Component
+
+Let's add a login component to our app using the Angular CLI:
+
+`ng generate @schematics/angular:component Login --project=forms-demo --module=src/app --style=scss --path=src/app/components/forms --no-interactive`
+
+This command does a bunch of different things. It uses the `@schematics/angular:component` template. The component will be part of the `forms-demo` project. It will be declared in the `app.module.ts`. We're setting the style to use `scss`. We're also creating the form in the `src/app/components/forms` folder. The CLI will create the `components/forms` folders for us.
+
+This is a good place to do a commit:
+
+`git commit -m "NEW: login component via CLI"`
