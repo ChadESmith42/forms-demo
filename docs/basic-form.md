@@ -58,3 +58,69 @@ Using the same Angular CLI, we'll create a new component.
 We'll commit these changes as well before we continue.
 
 `git commit -m "NEW Header Component via CLI"`
+
+Let's replace the `<header>` content with our new `HeaderComponent`.
+
+```html
+<header>
+  <app-header></app-header>
+</header>
+```
+
+### Add Content to the Header
+
+Let's add the navigation to our header. We'll start with just the basics and add more as we go.
+
+```html
+<!-- In header.component.html -->
+<section>
+  <h1>Forms Demo Application</h1>
+</section>
+<nav>
+  <a class="nav-link" routerLink="/login" routerLinkActive="active" ariaCurrentWhenActive="page">Login</a>
+</nav>
+```
+
+Let's add some styling, so it looks a little more readable.
+
+```scss
+/* In header.component.scss */
+nav {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-evenly;
+
+  .nav-link {
+    flex: 0 1 auto;
+    padding: .75rem 1rem 1rem 1rem;
+  }
+}
+```
+
+I've set my `<nav>` element to use flex-box and display the items in a row. The content should not wrap and will be evenly spaced.
+
+I've added just a touch of padding to each `.nav-link` element. This should help keep things visually appealing.
+
+Let's add the routing so we can work with our form.
+
+```ts
+//  In app-routing.module.ts
+
+const routes: Routes = [
+  { path: 'login', component: LoginComponent }
+];
+```
+
+This creates a route for the `LoginComponent`. We could make it the default or use other options to make this realistic (like a resolver or routeGuard). Those are beyond the purpose of this demo.
+
+Let's commit and save our work. For this section, I'm committing the changes to the `HeaderComponent` and the `AppRouting` separately. This helps if we need to revert changes (we won't but it's a good habit to develop).
+
+For the changes to `app.component.html` and `header.component.html`, we'll use this:
+
+`git commit -m "ADD: header content"`
+
+For the changes to `app-routing.module.ts`, we'll use this:
+
+`git commit: -m "Add: route for login"`
+
+## The Form Already
