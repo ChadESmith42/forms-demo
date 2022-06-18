@@ -47,3 +47,14 @@ This command does a bunch of different things. It uses the `@schematics/angular:
 This is a good place to do a commit:
 
 `git commit -m "NEW: login component via CLI"`
+
+## Navigation
+
+We'll also need to navigate to our login form. Let's create a Header Component that will hold the navigation and make life easier as we go through this demo.
+
+Using the same Angular CLI, we'll create a new component.
+`ng generate @schematics/angular:component Header --project=forms-demo --module=src/app --style=scss --path=src/app/components --no-interactive`
+
+We'll commit these changes as well before we continue.
+
+`git commit -m "NEW Header Component via CLI"`
